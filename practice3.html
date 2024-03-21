@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Navigation</title>
+
+    
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(gym1.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            /* position: fixed; */
+            background-size: cover;
+            background-attachment: fixed;
+            
+        }
+        .navcontainer {
+            width: 100%;
+            height: 55px;
+            background-color: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(5px); 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+        }
+
+        .navcontainer img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .navcontainer nav {
+            display: flex;
+        }
+
+        .navcontainer nav a {
+            text-decoration: none;
+            color:  blueviolet;
+            font-weight: bolder;
+            font-size: xx-large;
+            
+            padding: 0 20px;
+            cursor: pointer;
+            transition: background-color 1s;
+        }
+
+        .navcontainer nav a:hover{
+            background-color: goldenrod; 
+            border-radius: 5px;
+            width: auto;
+            height: auto;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .search input[type="search"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        .search input[type="button"] {
+            padding: 8px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search input[type="button"]:hover {
+            background-color: #2fa2d8;
+
+        }
+
+        .about {
+            margin-top: 300px;
+            margin-left: 300px;
+            box-sizing: border-box;
+            width: auto;
+            height: auto;
+            align-items: center;
+            padding: 20px;
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: linear-gradient(gray, white);
+            box-shadow: 30px 30px 30px 30px rgba(0, 0, 0, 0.5);
+        }
+        .home{
+            color: rgb(192, 167, 167);
+            margin-top: 300px;
+            box-sizing: border-box;
+            /* border:  solid black; */
+            height: auto;
+            width: 800px;
+            margin-left: 50px;
+            font-size: xx-large;
+            backdrop-filter: blur(2px);
+            padding: 5px;
+        }
+        .home #submit{
+            background-color: rgb(250, 5, 58);
+            width: 200px;
+            height: 50px;
+            font-size: xx-large;
+            border-radius: 20px;
+            margin-left: 300px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .aboutcontainer{
+            width: auto;
+            background: linear-gradient(90deg,black,blueviolet);
+            color: rgb(230, 78, 18);
+            border: 2px solid white;
+            margin: 400px 75px;
+            padding: 5px;
+
+
+        }
+        .box{
+            /* background-color: red; */
+            display: flex;
+            border: 2px solid white;
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        .box img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        
+        }
+        .contactus{
+            /* background-color: blue; */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            border: 2px solid rgb(153, 192, 194);
+            padding: 50px;
+            /* backdrop-filter: blur(1px); */
+            background-color: rgb(53, 70, 64);
+            opacity: 0.95;
+
+        }
+        .contactus .boxforimg img{
+            width: 500px;
+            height: 400px;
+            
+        }
+        .contactus .boxforform{
+            background: linear-gradient( 10deg,blueviolet,black);
+            /* display: flex; */
+            /* border: 2px solid red; */
+            width: 500px;
+            height: 400px;
+            /* padding: 50px; */
+            /* color: rgb(14, 20, 20); */
+
+            
+            padding-left: 100px;
+            padding-top: 50px;
+        }
+        .contactus .boxforform #submitid{
+            background-color: rgb(44, 7, 189);
+            width: 200px;
+            height: 30px;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .footer-container{
+            box-sizing: border-box;
+            /* border: 2px solid red; */
+            /* background-color: white; */
+            width: 100vw;
+            height: 300px;
+            display: flex;
+            margin-top: 400px;
+            background: linear-gradient(rgb(173, 161, 184),rgb(46, 59, 59));
+        }
+
+        .footer-container .about-footer{
+            /* background-color: red; */
+            max-width: 4oopx;
+            flex: 1;
+            height: auto;
+            padding: 10px;
+            /* margin-left: 100px; */
+            margin-left: 100px;
+            
+        }
+        .footer-container .Quicklinks{
+            /* background-color: blue; */
+            margin-right: 200px;
+            /* padding: 20px; */
+            color: rgb(19, 4, 27);
+            /* display: block; */
+            font-size: xx-large;
+            width: 350px;
+            padding-left: 100px;
+            /* margin-top: 30px; */
+            font-size: x-large;
+            /* border: 2px solid blueviolet; */
+            padding-top: 20px;
+            
+        }
+        .Quicklinks nav a{
+            text-decoration: none;
+            display: block;
+            margin-left: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: medium;
+            padding: 5px;
+            padding-left: -30px;
+            color: blue;
+           
+            
+        }
+        .footer-img{
+            max-width: 400px;
+            flex: 1;
+            
+        }
+       .footer-img iframe{
+            width: 100%;
+            height: 200px;
+        }
+        .programs{
+            /* background-color: red; */
+            box-sizing: border-box;
+            width: auto;
+            height: 200px;
+            padding: 20px;
+            margin-left: -200px;
+            padding-right: 100px;
+            color: blueviolet;
+            /* border: 2px solid blueviolet; */
+
+        }
+        .programs h2,h3{
+            color: blue;
+            padding: 5px;
+            font-size: medium;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="navcontainer">
+            <div class="logo">
+                <img src="gym.png">
+            </div>
+            <nav>
+                <a href="#home" id="nav1">Home</a>
+                <a href="#about" id="nav2">About</a>
+                <a href="#" id="nav3">Schedules</a>
+                <a href="#" id="nav4">Classes</a>
+                <a href="#contact us" id="nav5">Contact Us</a>
+            </nav>
+            <div class="search">
+                <form action="">
+                    <input type="search" name="search" placeholder="Search Here">
+                    <input type="button" value="Search">
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="home">
+        <div class="home">
+            <h1>GO HARD OR GO HOME</h1>
+            <h4>Nice-looking body and powerfu organism are interconnected-and we can help you with both</h4>
+            <input type="button" value="Get-Started" id="submit">
+        </div>
+    </section>
+    <section id="about">
+        <div class="aboutcontainer">
+            <h1 style="text-align: center; color: rgb(44, 167, 150); font-weight: bolder; font-size: xx-large;">About The Fitness Gym</h1>
+            <p style="font-size: larger;">Welcome to Fitness Gym! We're more than just a fitness center – we're your partner in health and wellness. Our mission is simple: to inspire and empower you to reach your fitness goals, whatever they may be. With top-notch facilities, expert trainers, and a supportive community, we provide the tools and motivation you need to succeed. Whether you're a beginner or a seasoned athlete, we're here to help you become the best version of yourself. Join us today and let's start this journey together!</p>
+            <div class="box">
+                <img src="https://themewagon.github.io/zacson/assets/img/gallery/team1.png" alt="">
+                <div class="box-content">
+                    <h2 style="padding-left: 390px; color: aquamarine;" >Muscle Building</h2>
+                    <p>
+                    At Fitness gym we understand the importence of muscle building for achieving a strong and toned physique.Our muscle building workouts are designed to challenge your muscle and stimulates grouth,incorporating a variety of exercises and training techniques to ensure continuos progress and results.
+                    </p>
+                </div>  
+            </div>
+            <div class="box">
+                <img src="https://themewagon.github.io/zacson/assets/img/gallery/team1.png" alt="">
+                <div class="box-content">
+                    <h2 style="padding-left: 390px; color: aquamarine;" >Muscle Building</h2>
+                    <p>
+                    At Fitness gym we understand the importence of muscle building for achieving a strong and toned physique.Our muscle building workouts are designed to challenge your muscle and stimulates grouth,incorporating a variety of exercises and training techniques to ensure continuos progress and results.
+                    </p>
+                </div>  
+            </div>
+            <div class="box">
+                <div class="box-content">
+                    <h2 style="padding-left: 500px; color: aquamarine; ">Weight Gain</h2>
+                    <p>
+                        Looking to bulk up and pack on muscle mass? Our weight gain programs are specifically tailored to help you build strength and size effectively. Through a combination of resistance training, strategic nutrition planning, and expert guidance from our trainers, you'll be able to maximize your muscle growth and achieve the physique you desire.
+                    </p>
+                </div>  
+                <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+            </div>
+            <div class="box">
+                <img src="https://themewagon.github.io/zacson/assets/img/gallery/team3.png" alt="">
+                <div class="box-content">
+                    <h2 style="padding-left: 400px; color: aquamarine;">Weight Loss</h2>
+                    <p>
+                        Struggling to shed those stubborn pounds? Our weight loss programs are designed to help you reach your target weight and improve your overall health and wellness. With personalized workout plans, nutritional counseling, and motivational support from our dedicated trainers, you'll be able to achieve sustainable weight loss results.s
+                    </p>
+                </div>  
+            </div>
+        </div>
+    </section>
+    <section id="contact us">
+        <div class="contactus">
+            <div class="boxforimg">
+                <img src="https://www.philips.co.in/c-dam/b2bhc/master/About-Us/contact-us/customer-support-lady.jpg" alt="">
+            </div>
+            <div class="boxforform">
+                <div class="contactush1">
+                 <h1 style="color: rgb(221, 45, 212); padding-left: 60px;">CONTACT US</h1>
+                </div>
+                <form action="">
+                    <div class="fullname" style="padding: 10px; " >
+                    <input type="text" placeholder="Full Name">
+                     </div>
+                    <div class="email" style="padding: 10px;">
+                        <input type="email" name="" id="" placeholder="Email">
+                    </div>
+                    <div class="message" style="padding: 10px;">
+                        <textarea name="Message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                    </div>
+                    <div class="contactsubmit" style="padding: 10px;">
+                        <input type="submit" value="submit" id="submitid">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+           <div class="about-footer">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/017/504/043/small/bodybuilding-emblem-and-gym-logo-design-template-vector.jpg" alt="">
+            <!-- <p >Welcome to Fitness Gym! We're more than just a fitness center – we're your partner in health and wellness. Our mission is simple: to inspire and empower you to reach your fitness goals, whatever they may be. With top-notch facilities, expert trainers, and a supportive community, we provide the tools and motivation you need to succeed. Whether you're a beginner or a seasoned athlete, we're here to help you become the best version of yourself. Join us today and let's start this journey together!</p> -->
+
+           </div>
+           <div class="Quicklinks">
+                <h4>Quick Links</h4>
+                <nav>
+                    <a href="#home" id="nav1">Home</a>
+                    <a href="#about" id="nav2">About</a>
+                    <a href="#schedules" id="nav3">Schedules</a>
+                    <a href="#classes" id="nav4">Classes</a>
+                    <a href="#contact us" id="nav5">Contact Us</a>
+                </nav>
+
+           </div>
+           <div class="programs">
+            <h1 style="color: rgb(2, 2, 19);">Programs</h1>
+            <h3>Muscle Building</h3>
+            <h3>Weight Loss</h3>
+            <h3>Weight Gain</h3>
+           </div>
+           <div class="footer-img">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8314946356846!2d77.47662521535395!3d12.980855288960053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3df6f570bc27%3A0x5373352cf8764b56!2sRadha%20Krishna%20Complex%2C%2080%20Feet%20Rd%2C%20Gopalapura%2C%20Binnipete%2C%20Bengaluru%2C%20Karnataka%20560023!5e0!3m2!1sen!2sin!4v1647699401633!5m2!1sen!2sin" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+           </div>
+        </div>
+
+    </footer>
+</body>
+</html>
+
+</body>
+</html>
